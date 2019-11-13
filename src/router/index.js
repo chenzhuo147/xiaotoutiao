@@ -1,12 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/home/index.vue'
+import Login from '../views/home' // 默认寻找index的文件
 
 Vue.use(VueRouter)
 
 const routes = [
+
   {
     path: '/',
+    redirect: '/home'
+  },
+  // 一级路由
+  {
+    path: '/login',
+    component: Login
+  },
+  // 一级路由
+  {
+    path: '/home',
     name: 'home',
     component: Home
   }
